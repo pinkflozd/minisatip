@@ -1373,7 +1373,7 @@ void get_signal(adapter *ad, int *status, uint32_t *ber, uint16_t *strength,
 
 int get_signal_new(adapter *ad, int *status, uint32_t *ber, uint16_t *strength,
                    uint16_t *snr) {
-#if DVBAPIVERSION >= 0x050A
+//#if DVBAPIVERSION >= 0x050A
     *status = *snr = *ber = *strength = 0;
     int64_t strengthd = 0, snrd = 0, init_strength = 0, init_snr = 0;
     char *strength_s = "(none)", *snr_s = "(none)";
@@ -1441,9 +1441,9 @@ int get_signal_new(adapter *ad, int *status, uint32_t *ber, uint16_t *strength,
 
     return 0;
 
-#else
-    return -1;
-#endif
+//#else
+//    return -1;
+//#endif
 }
 
 #define NEW_SIGNAL 1
